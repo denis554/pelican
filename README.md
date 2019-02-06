@@ -1,4 +1,4 @@
-# Pelican (PLN) Online Ordering/eCommerce
+# Pelican (PLN) Online Ordering
 
 #### Also known as PLN
 
