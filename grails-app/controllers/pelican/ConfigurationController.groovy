@@ -27,6 +27,8 @@ import grails.plugin.springsecurity.annotation.Secured
 import io.pelican.api.mail.EasyPostShipmentApi
 import io.pelican.api.mail.ShipmentAddress
 
+import io.pelican.Layout
+
 
 @Mixin(BaseController)
 class ConfigurationController {
@@ -34,6 +36,7 @@ class ConfigurationController {
 	def emailService
 	def applicationService
 	def currencyService
+	def commonUtilities
 	
 	private final String SETTINGS_FILE = "settings.properties"
 	
@@ -839,19 +842,23 @@ class ConfigurationController {
 			def errored = 0
 			String line;
 			
+			def defaultLayout = Layout.findByDefaultLayout(true)
+			def importUuid = commonUtilities.generateRandomString(7)
+
 			try {
 	    	
 				br = new BufferedReader(new InputStreamReader(is));
 				while ((line = br.readLine()) != null) {
-					def fields = line.split(",")
+					def fields = line.split(",", -1);
 					
 					try{
 					
 						def name = fields[0]
 						def quantity = Integer.parseInt(fields[1])
 						def price = new BigDecimal(fields[2])
-						def weight = new BigDecimal(fields[3])
-						def description = fields[4]
+						def salesPrice = new BigDecimal(fields[3])
+						def weight = new BigDecimal(fields[4])
+						def description = fields[5]
         	
 						def existingProduct = Product.findByName(name)
 						
@@ -861,9 +868,15 @@ class ConfigurationController {
 							product.name = name
 							product.quantity = quantity
 							product.price = price
+							product.salesPrice = salesPrice
 							product.weight = weight
 							product.description = description
+							product.layout = defaultLayout
+							product.importUuid = importUuid
 							product.save(flush:true)
+
+							println product.errors
+
 							count++							
 							
 						}else{

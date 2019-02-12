@@ -112,13 +112,12 @@ page import="io.pelican.log.SearchLog"
 			
 			
 			<div style="float:left; width:300px; margin-left:57px;">
-				<!--
+
 				<g:link uri="/configuration/import_products_view" class="btn btn-default">
 					<span class="glyphicon glyphicon-import"></span>
-					Import Products
+					Import Products CSV
 				</g:link>
 				<br/>
-				-->
 				
 				<g:link uri="/export/view_export" class="btn btn-default">
 					<span class="glyphicon glyphicon-export"></span>
@@ -126,11 +125,13 @@ page import="io.pelican.log.SearchLog"
 				</g:link>
 				<br/>
 				
+				<!--
 				<g:link uri="/import/view_import" class="btn btn-default">
 					<span class="glyphicon glyphicon-import"></span>
 					Import Data
 				</g:link>
 				<br/>
+				-->
             	
 	        	
 				<g:link uri="/configuration/uploads" class="btn btn-default">

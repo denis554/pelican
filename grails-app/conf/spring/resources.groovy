@@ -1,8 +1,10 @@
 // Place your Spring DSL code here
 import io.pelican.exception.BaseException
 import io.pelican.handlers.PelicanAuthenticationSuccessHandler
+import io.pelican.common.CommonUtilities
 
 beans = {
+	commonUtilities(CommonUtilities)
 	exceptionHandler(io.pelican.exception.BaseException) {
 	    exceptionMappings = ['java.lang.Exception': '/error']
 	}

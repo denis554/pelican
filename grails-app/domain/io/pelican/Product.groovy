@@ -33,6 +33,7 @@ class Product {
 	String productNo
 	
 	String harmonizedCode
+	String importUuid
 	
 	Layout layout
 	
@@ -63,6 +64,7 @@ class Product {
 		weight(nullable:false)
 		productNo(nullable:true)
 		harmonizedCode(nullable:true)
+		importUuid(nullable:true)
 		id generator: 'sequence', params:[sequence:'ID_PRODUCT_PK_SEQ']
     }
 }
