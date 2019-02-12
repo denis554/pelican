@@ -8,14 +8,15 @@
 <html>
 	<head>
 		<meta name="layout" content="admin">
-		<g:set var="entityName" value="${message(code: 'transaction.label', default: 'Transaction')}" />
-		<title>Completed Orders</title>
+		<title><g:message code="completed.orders"/></title>
 	</head>
 	<body>
 
 
 		<div id="list-transaction" class="content scaffold-list" role="main">
-			<h2>Completed Orders</h2>
+
+			<h2><g:message code="completed.orders"/></h2>
+		
 			<g:if test="${flash.message}">
 				<div class="alert alert-info" role="status">${flash.message}</div>
 			</g:if>
@@ -25,19 +26,20 @@
 			<table class="table">
 				<thead>
 					<tr>
-						<g:sortableColumn property="id" title="${message(code: 'transaction.id.label', default: 'Order #')}" />
+						<g:sortableColumn property="id" title="${message(code: 'transaction.id', default: 'Order #')}" />
 										
-						<g:sortableColumn property="orderDate" title="${message(code: 'transaction.orderDate.label', default: 'Order Date')}" />
+						<g:sortableColumn property="orderDate" title="${message(code: 'order.date', default: 'Order Date')}" />
 						
-						<th><g:message code="transaction.account.label" default="Account" /></th>
+						<th><g:message code="account" default="Account" /></th>
 						
-						<g:sortableColumn property="total" title="${message(code: 'transaction.total.label', default: 'Total')}" />
+						<g:sortableColumn property="total" title="${message(code: 'total', default: 'Total')}" />
 						
-						<g:sortableColumn property="taxes" title="${message(code: 'transaction.taxes.label', default: 'Taxes')}" />
+						<g:sortableColumn property="taxes" title="${message(code: 'taxes', default: 'Taxes')}" />
 						
-						<g:sortableColumn property="shipping" title="${message(code: 'transaction.shipping.label', default: 'Shipping')}" />
+						<g:sortableColumn property="shipping" title="${message(code: 'shipping', default: 'Shipping')}" />
 						
-						<g:sortableColumn property="status" title="${message(code: 'transaction.taxes.label', default: 'Status')}" />
+						<g:sortableColumn property="status" title="${message(code: 'status', default: 'Status')}" />
+						
 						<th></th>
 					
 					</tr>
@@ -60,7 +62,7 @@
 						<td>${transactionInstance.status}</td>
 						
 						
-						<td><g:link action="show" params="[id: transactionInstance.id]" class="show-transaction-${transactionInstance.id}">Show </g:link></td>
+						<td><g:link action="show" params="[id: transactionInstance.id]" class="show-transaction-${transactionInstance.id}"><g:message code="show"/></g:link></td>
 					
 					</tr>
 				</g:each>

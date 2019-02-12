@@ -8,16 +8,15 @@
 <html>
 	<head>
 		<meta name="layout" content="admin">
-		<g:set var="entityName" value="${message(code: 'page.label', default: 'Page')}" />
-		<title>Pelican : Pages</title>
+		<title>Pelican : <g:message code="pages"/></title>
 	</head>
 	<body>
 	
 		<div id="list-page" class="content scaffold-list" role="main">
 
-			<h2 class="floatleft">Pages</h2>
+			<h2 class="floatleft"><g:message code="pages"/></h2>
 		
-			<g:link controller="page" action="create" class="btn btn-primary pull-right">New Custom Page</g:link>
+			<g:link controller="page" action="create" class="btn btn-primary pull-right"><g:message code="new.custom.page"/></g:link>
 		
 			<br class="clear"/>
 			
@@ -31,11 +30,11 @@
 			<table class="table">
 				<thead>
 					<tr>
-						<g:sortableColumn property="title" title="Title" />
+						<g:sortableColumn property="title" title="${message(code: 'title', default: 'Title')}" />
 						
-						<th>url</th>
+						<th><g:message code="url"/></th>
 						
-						<th>Layout</th>
+						<th><g:message code="layout"/></th>
 						
 						<th></th>
 					
@@ -48,11 +47,11 @@
 						<td><g:link action="show" id="${pageInstance.id}">${pageInstance.title}</g:link></td>
 					
 						<td>/${applicationService.getContextName()}/page/store_view/${pageInstance.title} &nbsp;&nbsp;
-						<a href="/${applicationService.getContextName()}/page/store_view/${URLEncoder.encode("${pageInstance.title}", "UTF-8")}" class="information" target="_blank">Test</a></td>
+						<a href="/${applicationService.getContextName()}/page/store_view/${URLEncoder.encode("${pageInstance.title}", "UTF-8")}" class="information" target="_blank"><g:message code="test"/></a></td>
 						
 						<td><g:link controller="layout" action="edit" id="${pageInstance.layout.id}">${pageInstance.layout.name}</g:link></td>
 					
-						<td><g:link action="edit" id="${pageInstance.id}" class="">Edit</g:link></td>
+						<td><g:link action="edit" id="${pageInstance.id}" class=""><g:message code="edit"/></g:link></td>
 					
 					</tr>
 				</g:each>
