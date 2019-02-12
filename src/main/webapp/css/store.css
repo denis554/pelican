@@ -22,7 +22,7 @@ body, html{
 }
 #logo,
 #shopping-cart{
-	background: url('/hlo/images/sprite.png') no-repeat;
+	background: url('/pln/images/sprite.png') no-repeat;
 }
 #logo{
 	height:130px;
