@@ -171,7 +171,7 @@
 	<div id="bottom-padding"></div>
 	
 
-	<!--<script type="text/javascript" src="http://104.207.157.132:8080/nod/static/q.js"></script>-->
+	<script type="text/javascript" src="http://104.207.157.132:8080/nod/static/q.js"></script>
 	
 </body>
 </html>
