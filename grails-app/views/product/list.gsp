@@ -60,6 +60,10 @@
 							<th style="width:65px;"></th>
 					
 							<g:sortableColumn property="id" title="${message(code:'id')}" />
+
+							<g:if test="${containsImports}">
+								<g:sortableColumn property="importUuid" title="${message(code:'import.uuid')}" style="width:70px"/>
+							</g:if>
 						
 						
 							<g:sortableColumn property="name" title="${message(code: 'name', default: 'Name')}" />
@@ -90,9 +94,13 @@
 									</g:else>
 								</g:link>
 							</td>
-							
+
 							<td><g:link action="show" id="${productInstance.id}">${fieldValue(bean: productInstance, field: "id")}</g:link></td>
 						
+							<g:if test="${productInstance.importUuid}">
+								<td>${productInstance.importUuid}</td>
+							</g:if>
+							
 							<td>${fieldValue(bean: productInstance, field: "name")}</td>
 						
 							

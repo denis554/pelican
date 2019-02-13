@@ -19,7 +19,7 @@ page import="io.pelican.log.SearchLog"
 	<head>
 		<meta name="layout" content="admin">
 		<g:set var="entityName" value="${message(code: 'catalog.label', default: 'Catalog')}" />
-		<title>Pelican : Import/Export</title>
+		<title><g:message code="import.export" /></title>
 	</head>
 	<body>
 		
@@ -36,7 +36,7 @@ page import="io.pelican.log.SearchLog"
 		
 		<div id="configuration" class="content scaffold-create" role="main">
 		
-			<h2>Import/Export</h2>
+			<h2><g:message code="import.export" /></h2>
 		
 			<g:if test="${flash.message}">
 				<div class="alert alert-info" role="status">${flash.message}</div>
@@ -55,55 +55,55 @@ page import="io.pelican.log.SearchLog"
 			<pre style="float:left; width:300px; font-family:Arial !important; padding:0px 10px 0px 10px !important" class="">
 				<table class="table borderless" style="width:260px; margin:-5px 30px -20px 10px !important;">
 					<tr>
-						<td>Accounts</td>
+						<td><g:message code="accounts"/></td>
 						<td><strong>${Account.count()}</strong></td>
 					</tr>
 					<tr>
-						<td>Catalogs</td>
+						<td><g:message code="catalogs"/></td>
 						<td><strong>${Catalog.count()}</strong></td>
 					</tr>
 					<tr>
-						<td>Products</td>
+						<td><g:message code="products" /></td>
 						<td><strong>${Product.count()}</strong></td>
 					</tr>
 					<tr>
-						<td>Product Options</td>
+						<td><g:message code="product.options"/></td>
 						<td><strong>${ProductOption.count()}</strong></td>
 					</tr>
 					<tr>
-						<td>Product Specifications</td>
+						<td><g:message code="product.specifications"/></td>
 						<td><strong>${ProductSpecification.count()}</strong></td>
 					</tr>
 					<tr>
-						<td>Shopping Carts</td>
+						<td><g:message code="shopping.carts"/></td>
 						<td><strong>${ShoppingCart.count()}</strong></td>
 					</tr>
 					<tr>
-						<td>Orders</td>
+						<td><g:message code="orders"/></td>
 						<td><strong>${Transaction.count()}</strong></td>
 					</tr>
 					<tr>
-						<td>Pages</td>
+						<td><g:message code="pages"/></td>
 						<td><strong>${Page.count()}</strong></td>
 					</tr>
 					<tr>
-						<td>Uploads</td>
+						<td><g:message code="uploads"/></td>
 						<td><strong>${Upload.count()}</strong></td>
 					</tr>
 					<tr>
-						<td>Catalog View Logs</td>
+						<td><g:message code="catalog.view.logs"/></td>
 						<td><strong>${CatalogViewLog.count()}</strong></td>
 					</tr>
 					<tr>
-						<td>Product View Logs</td>
+						<td><g:message code="product.view.logs"/></td>
 						<td><strong>${ProductViewLog.count()}</strong></td>
 					</tr>
 					<tr>
-						<td>Page View Logs</td>
+						<td><g:message code="page.view.logs"/></td>
 						<td><strong>${PageViewLog.count()}</strong></td>
 					</tr>
 					<tr>
-						<td>Search Logs</td>
+						<td><g:message code="search.logs"/></td>
 						<td><strong>${SearchLog.count()}</strong></td>
 					</tr>
 				</table>
@@ -115,13 +115,13 @@ page import="io.pelican.log.SearchLog"
 
 				<g:link uri="/configuration/import_products_view" class="btn btn-default">
 					<span class="glyphicon glyphicon-import"></span>
-					Import Products CSV
+					<g:message code="import.products"/>
 				</g:link>
 				<br/>
 				
 				<g:link uri="/export/view_export" class="btn btn-default">
 					<span class="glyphicon glyphicon-export"></span>
-					Export Data
+					<g:message code="export.data"/>
 				</g:link>
 				<br/>
 				
@@ -133,23 +133,26 @@ page import="io.pelican.log.SearchLog"
 				<br/>
 				-->
             	
-	        	
 				<g:link uri="/configuration/uploads" class="btn btn-default">
 					<span class="glyphicon glyphicon-upload"></span>
-					Uploads
+					<g:message code="uploads"/>
 				</g:link>
 				<br/>
 	        	
 	        	<g:if env="development">
+	        		<br/>
+	        		<br/>
 					<g:link uri="/development/generate_development_data" class="btn btn-default">
 						<span class="glyphicon glyphicon-retweet"></span>
-						Generate Data
+						<g:message code="generate.data"/>
 					</g:link>
+					<p class="information secondary"><g:message code="generate.data.note"/></p>
 					<br/>
 					<g:link uri="/development/generate_customers" class="btn btn-default">
 						<span class="glyphicon glyphicon-retweet"></span>
-						++Dev Customers
+						<g:message code="mock.customers"/>
 					</g:link>
+					<p class="information secondary"><g:message code="customers.generate.note"/> <a href="http://openabc.xyz" title="Seal CRM">Seal CRM (BDO)</a> <g:message code="customers.generate.note.continued"/></p>
 					<br/>
 				</g:if>
 				
@@ -158,10 +161,14 @@ page import="io.pelican.log.SearchLog"
 			
 			<br class="clear"/>
 			
-			<g:link uri="/configuration/manage_key" class="pull-right">
-				Manage Data Export Key
-			</g:link>
-			
+			<div class="align-right">
+				<g:link uri="/configuration/manage_key" class="pull-right">
+					Manage Data Key for Exporting to Seal CRM
+				</g:link>
+				<br/>
+				<a href="http://openabc.xyz" title="Seal CRM"><g:message code="more.about.seal"/></a>
+			</div>
+
 			<br class="clear"/>
 			
 		</div>

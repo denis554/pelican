@@ -141,8 +141,17 @@ class ProductController {
 			params.max = Math.min(max ?: 10, 100)
 			params.sort = params.sort ? params.sort : "id"
 			params.order = params.order ? params.order : "asc"
+
+			def productInstanceList = Product.list(params)
+
+			def containsImports = false
+			productInstanceList.each { 
+				if(it.importUuid){
+					containsImports =  true
+				}
+			}
 			
-    		[productInstanceList: Product.list(params), productInstanceTotal: Product.count(), catalogCount: Catalog.count()]
+    		[productInstanceList: productInstanceList, productInstanceTotal: Product.count(), catalogCount: Catalog.count(), containsImports: containsImports]
 		}
     }
 

@@ -15,6 +15,7 @@ import grails.util.Environment
 
 class DevelopmentController {
 
+
 	/***
 		OLD DATA
 		Books
@@ -30,6 +31,9 @@ class DevelopmentController {
 		Sports & Outdoors
 	**/
 
+
+	//TODO:change development data to use utilities
+	//same with image and uploads
 	def springSecurityService
 	def sessionFactory
 

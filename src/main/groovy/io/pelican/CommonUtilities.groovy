@@ -7,7 +7,7 @@ import java.io.FileInputStream
 
 import grails.util.Holders
 
-class CommonUtilties {
+class CommonUtilities {
 	
 	def grailsApplication
 	def springSecurityService
