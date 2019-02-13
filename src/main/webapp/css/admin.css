@@ -443,12 +443,14 @@ h1.maintenance-header{
 .form-label{
 	float:left;
 	font-size:12px;
+	font-size:16px;/**trying something**/
+	font-weight:100;
 	text-align:right;
 	display:inline-block;
 	vertical-align:middle;
 	padding-top:5px;
 	font-weight:normal;
-	color:rgba(0,0,0,0.87) !important;
+	color:rgba(0,0,0,0.73) !important;
 }
 
 .form-label.full{
