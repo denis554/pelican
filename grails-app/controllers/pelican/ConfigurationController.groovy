@@ -868,7 +868,11 @@ class ConfigurationController {
 							product.name = name
 							product.quantity = quantity
 							product.price = price
-							product.salesPrice = salesPrice
+							
+							if(salesPrice != 0){
+								product.salesPrice = salesPrice
+							}
+
 							product.weight = weight
 							product.description = description
 							product.layout = defaultLayout
