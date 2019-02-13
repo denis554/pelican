@@ -3,7 +3,7 @@
 <html>
 	<head>
 		<meta name="layout" content="admin">
-		<title>Pelican : Store Layouts</title>
+		<title><g:message code="store.layouts"/></title>
 		
 		<script type="text/javascript" src="${resource(dir:'js/allow-tab.js')}"></script>
 		
@@ -31,26 +31,30 @@
 		
 		
 		<div class="form-group" style="margin-top:30px">
-			<g:link class="btn btn-primary pull-right" controller="layout" action="create">New Layout</g:link>
-			<g:link class="pull-right" controller="layout" action="edit_support_layouts"  style="display:inline-block;margin-right:30px">Other Pages</g:link>
-			<g:link class="pull-right" controller="page" action="list"  style="display:inline-block;margin-right:30px">Pages</g:link>
-			<g:link class="pull-right" controller="catalog" action="list"  style="display:inline-block;margin-right:30px">Catalogs</g:link>
-			<g:link class="pull-right" controller="product" action="list" style="display:inline-block;margin-right:30px">Products</g:link>
+			<g:link class="btn btn-primary pull-right" controller="layout" action="create"><g:message code="new.layout"/></g:link>
+
+			<g:link class="pull-right" controller="layout" action="edit_support_layouts"  style="display:inline-block;margin-right:30px"><g:message code="other.pages"/></g:link>
+			
+			<g:link class="pull-right" controller="page" action="list"  style="display:inline-block;margin-right:30px"><g:message code="pages"/></g:link>
+			
+			<g:link class="pull-right" controller="catalog" action="list"  style="display:inline-block;margin-right:30px"><g:message code="catalogs"/></g:link>
+			
+			<g:link class="pull-right" controller="product" action="list" style="display:inline-block;margin-right:30px"><g:message code="products"/></g:link>
 		</div>
 		
-		<h2>Store Layouts</h2>
-		<p class="instructions"><g:link controller="layout" action="edit_wrapper">Edit Main HTML Wrapper</g:link></p>  
+		<h2><g:message code="store.layouts"/></h2>
+		<p class="instructions"><g:link controller="layout" action="edit_wrapper"><g:message code="edit.html.wrapper.note"/></g:link></p>  
 			
 		
-		<p>Each page, whether it be a product page, custom page, catalog or other supporting page can have its own distinct layout.</p>
+		<p><g:message code="each.page.note"/>.</p>
 		
 			
 		<g:if test="${layouts?.size() > 0}">
 			<table class="table">
 				<thead>
 					<tr>
-						<g:sortableColumn property="name" title="Name" />
-						<g:sortableColumn property="defaultLayout" title="Default" />
+						<g:sortableColumn property="name" title="${message(code:'name')}" />
+						<g:sortableColumn property="defaultLayout" title="${message(code:'default')}" />
 						<th></th>
 					</tr>
 				</thead>
@@ -59,11 +63,11 @@
 						<td>${layoutInstance.name}</td>
 						<td>
 							<g:if test="${layoutInstance.defaultLayout}">
-								Default
+								<g:message code="default"/>
 							</g:if>
 						</td>
 						<td>
-							<g:link controller="layout" action="edit" params="[id: layoutInstance?.id]" class="${layoutInstance.name}-edit">Edit</g:link>
+							<g:link controller="layout" action="edit" params="[id: layoutInstance?.id]" class="${layoutInstance.name}-edit"><g:message code="edit"/></g:link>
 						</td>
 					</tr>
 				</g:each>
@@ -74,9 +78,9 @@
 			</div>
 		</g:if>	
 		<g:else>
-			<div class="alert alert-info" style="margin-top:10px;"><strong>How did you do that?</strong>
+			<div class="alert alert-info" style="margin-top:10px;"><strong><g:message code="how.did.note"/>?</strong>
 			<br/><br/>
-			You must have deleted layouts straight from the database. <g:link controller="layout" action="create" class="btn btn-primary">New Layout</g:link>
+			<g:message code="you.must.have.note"/>. <g:link controller="layout" action="create" class="btn btn-primary"><g:message code="new.layout"/></g:link>
 			</div>
 		</g:else>
 	
