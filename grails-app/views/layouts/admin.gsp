@@ -113,12 +113,19 @@
 			<ul id="admin-nav">
 				<li><g:link uri="/admin" class="${dashboardActive}"><g:message code="dashboard" /></g:link></li>
 				<li><g:link uri="/product/list" class="${productsActive}"><g:message code="products" /></g:link></li>
+
 				<li><g:link uri="/catalog/list" class="${catalogsActive}"><g:message code="catalogs" /></g:link></li>
+				
 				<li><g:link uri="/transaction/list" class="${ordersActive}"><g:message code="orders" /></g:link></li>
+				
 				<li><g:link uri="/page/list" class="${pagesActive}"><g:message code="pages" /></g:link></li>
+				
 				<li><g:link uri="/account/admin_list?admin=false" class="${accountsActive}"><g:message code="accounts" /></g:link></li>
+				
 				<li><g:link uri="/configuration/index" class="${importActive}"><g:message code="import.export" /></g:link></li>
+				
 				<li><g:link uri="/layout/index" class="${layoutActive}"><g:message code="store.layouts" /></g:link></li>
+				
 				<li><g:link uri="/configuration/settings" class="${settingsActive}"><g:message code="settings" /></g:link></li>
 			</ul>
 				
