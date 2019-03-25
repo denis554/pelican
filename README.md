@@ -21,7 +21,7 @@ PLN is a J2EE project, it is:
 * Groovy
 
 
-The framework used to develop the project is called Grails Yes, another framework, Grails is so special though that it can be considered a productivity tool instead of a framework. A light tool that sits on top of J2EE project structure where Groovy is leveraged and when deployed becomes a J2EE project.
+The framework used to develop the project is called Grails, Grails is a Java framework. Grails is unique in that it can be considered a productivity tool instead of a framework. A light tool that sits on top of J2EE project structure where Groovy is leveraged and when deployed becomes a J2EE project.
 
 Grails is domain driven, leverages Groovy which is an abstraction of Java (you can write Java code within a Groovy class file), object oriented and in summary is a productivity tool. Attempt to write the same logic in any other technology stack of choice without missing out on Java's greatest assets and you're talking years of development instead of months. Customizations are quick as well. Everything, Models, Views and Controllers are nicely configured/glued together to create one seemless development experience.
 
